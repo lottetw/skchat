@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>元富證券智能客服</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<!-- css -->
+	<link rel="stylesheet" type="text/css" href="assets/css/vendors/normalize.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/vendors/vendors.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/main.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/mslink.css">
+	<!-- favicon -->
+	<link rel="shortcut icon" size="16x16" href="favicon.ico">
+	<link rel="apple-touch-icon" sizes="192x192" href="favicon192.png">
+	<!-- scripts -->
+	<script src="assets/js/vendors/jquery-3.3.1.min.js"></script>
+	<script src="assets/js/vendors/swiper.min.js"></script>
+	<script src="assets/js/vendors/jquery.scrollbar.min.js"></script>
+	<script src="assets/js/vendors/moment.min.js"></script>
+	<script src="assets/js/vendors/daterangepicker.min.js"></script>
+	<script src="assets/js/vendors/vivus.min.js"></script>
+	<script src="assets/js/main.js"></script>
+</head>
+<body>
+<div class="mask js-mask"></div>
+<!-- E版型 -->
+<div class='popup-sec js-popup-sec '>
+	<!-- E1 -->
+	<div class='popup-page msg-E1 js-popup-E1' style='display:none;'>
+		<div class='popup-close js-popup-E1-close' title='E1 關閉'></div>
+		<div class='popup-wrapper E1-wrapper'>
+			<div class="msg-header" style='background-image: url(assets/img/dataimg/E1-bg@2x.jpg);'>
+			</div>
+			<div class='msg-btnlist msg-btnlist-bottom'>
+				<a href='javascript:' class='show-link js-popup-E1-close' title=''>我要申請電子月結單</a>
+			</div>
+		</div>
+	</div>
+	<!-- E2 -->
+	<div class='popup-page msg-E2 js-popup-E2' style='display:none;'>
+		<div class='popup-close js-popup-E2-close' title='E2 關閉'></div>
+		<div class='popup-wrapper E2-wrapper'>
+			<div class='msg-header' style='background-image: url(assets/img/dataimg/E2-bg@2x.jpg);'>
+				<div class='E2-txtsec'>
+					<p class='E2-h1'>環保愛地球，標題最多十三字</p>
+					<p class='E2-txt'>快來註冊電子月結單！小標最多十七字</p>
+					<div class='toggle-box-wrapper'>
+						<div class='js-toggle-box-btn toggle-box-button'><span>注意事項</span></div>
+						<div class='toggle-box'>
+							<p>說明文字若超過「每行15字 * 5行」，則需往下捲動才看得到。</p>
+							<p>Ｑ：申請電子綜合月結單後，卻沒收到，該怎麼辦?</p>
+							<p>1. 請先檢查您的電子郵件信箱是否已經超過容量限額，導致無法接收新的郵件。</p>
+							<p><a href='javascript:;'>更多Q&A請點此觀看完整問題集</a></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class='msg-btnlist msg-btnlist-bottom'>
+				<a href='javascript:' class='show-link js-popup-E2-close' title=''>我要申請電子月結單</a>
+			</div>
+		</div>
+	</div>
+	<!-- E3 -->
+	<div class='popup-page msg-E3 js-popup-E3' style='display: none;'>
+		<div class='popup-wrapper E3-wrapper'>
+			<div class='msg-header'>
+				<div class='E3-txtsec'>
+					<p class='E3-h1'> <img src="assets/img/dataimg/E-icon20x20-news.png" alt="活動公告" class="icon-inline">活動公告</p>
+					<div class ='E3-list-wrapper'>
+						<ul class='E3-list'>
+							<li>
+								<p class='E3title'>抽獎公布</p>
+								<p class='E3-txt'>十萬淘金樂第二波獲獎名單出爐囉！恭喜得獎者，請至<a href='javascript:;' class='show-link'>活動網頁</a>了解。</p>
+							</li>
+							<li>
+								<p class='E3title'>權益調整</p>
+								<p class='E3-txt'>2019年信用卡權益調整通知，請立即點此觀看公告。</p>
+							</li>
+							<li>
+								<p class='E3title'>標題建議放十二個中文字。</p>
+								<p class='E3-txt'>總共三則公告，標題12個中文字，提示文建議30個中文字。</p>
+							</li>
+							<li>
+								<p class='E3title'>第四則</p>
+								<p class='E3-txt'>客戶要求這個版位要放很多很多則的公告，讓大家一直滑一直看喔!!所以文字什麼的都沒有限制囉!!</p>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class='msg-btnlist msg-btnlist-bottom'>
+				<a href='javascript:' class='show-link js-popup-E3-close' title=''>我知道了</a>
+			</div>
+		</div>
+	</div>
+	<!-- E4 -->
+	<div class='popup-page msg-E4 js-popup-E4' style='display: none;'>
+		<div class='popup-wrapper E4-wrapper'>
+			<div class='msg-header'>
+				<div class='E4-txtsec'>
+					<p class='E4-h1 '><img class='E4-icon' src="assets/img/dataimg/E-icon30x30-ques.png" alt="說明圖示">
+						說明：此欄自動加總您名下的點數/現金回饋。建議標題30個中文字。</p>
+					<ul class='E4-list'>
+						<li>
+							<p class='E4-txt'>國內消費0.6%現金回饋，國外消費1.5%現金回饋，現金回饋無上限。
+								新戶行動支付加碼3%：新戶 (近一年未有新光信用卡) 核卡30天消費享3%回饋。內文最多70中文字。</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class='msg-btnlist msg-btnlist-bottom'>
+				<a href='javascript:' class='show-link js-popup-E4-close' title=''>我知道了</a>
+			</div>
+		</div>
+	</div>
+	<!-- E5 -->
+	<div class='popup-page msg-E5 js-popup-E5' style='display: none;'>
+		<div class='popup-wrapper E5-wrapper'>
+			<div class='msg-header'>
+				<div class='E5-txtsec'>
+					<p class='E5-h1 '>
+						<img class='icon-inline' src="assets/img/dataimg/E-icon20x20-alert.png" alt="說明圖示">
+						<span>提醒您</span></p>
+					<ul class='E5-list'>
+						<li>
+							<p class='E5-txt'>您目前無未出帳交易明細。內文最多70中文字。</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class='msg-btnlist msg-btnlist-bottom'>
+				<a href='javascript:' class='show-link js-popup-E5-close' title=''>我知道了</a>
+			</div>
+		</div>
+	</div>
+	<!-- E6 -->
+	<div class='popup-page msg-E6 js-popup-E6' style='display: none;'>
+		<div class='popup-wrapper E6-wrapper'>
+			<div class='msg-header'>
+				<div class='E6-txtsec'>
+					<p class='E6-h1 '>
+						<img class='icon-inline' src="assets/img/dataimg/E-icon20x20-alert.png" alt="說明圖示">
+						<span>提醒您</span></p>
+					<ul class='E6-list'>
+						<li>
+							<p class='E6-txt'>您目前無未出帳交易明細。<br>內文最多70中文字。</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class='msg-btnlist msg-btnlist-bottom msg-btn-2sel'>
+				<a href='javascript:' class='show-link js-popup-E6-close' title=''>取消</a>
+				<a href='javascript:' class='show-link js-popup-E6-close' title=''>確定</a>
+			</div>
+		</div>
+	</div>
+	<!-- E7 -->
+	<div class='popup-page msg-E7 js-popup-E7' style='display: none;'>
+		<div class='popup-wrapper E7-wrapper'>
+			<div class='msg-header'>
+				<div class='E7-txtsec'>
+					<p class='E7-h1 '>
+						<img class='icon-inline' src="assets/img/dataimg/D-icon20x20-call.png" alt="打電話圖示">
+						<span>馬上申請</span></p>
+					<ul class='E7-list'>
+						<li>
+							<p class='E7-txt'>請來電0800-123-123，由信貸專員為您服務。</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class='msg-btnlist msg-btnlist-bottom msg-btn-2sel'>
+				<a href='javascript:' class='show-link js-popup-E7-close' title=''>取消</a>
+				<a href='tel:0800123123' class='show-link js-popup-E7-close' title=''>撥打</a>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- top-menu, privacy modal 元富證券版本-->
+<header class="">
+	<div class="top-bar-outer">
+		<div class="top-bar">
+			<div class="logo styleMSL" title="元富證券智能客服"></div>
+			<a href="javascript:;" class="top-toggle js-top-toggle " title="top選單開關"></a>
+		</div>
+	</div>
+	<div class="top-menu top-privacy js-top-privacy" style="display:none;">
+		<div class="top-menu-wrapper">
+			<div class="row">
+				<p>元富證券為保護您的權益，請詳細閱讀「蒐集、處理及利用個人資料告知事項」。如您已充分瞭解並同意告知事項內容，再請您繼續進行對談服務。</p>
+			</div>
+			<div class="row btn-wrapper"> 
+				<a href="javascript:;" class="btn btn-confirm btn-full js-top-privacy-close">我知道了</a> 
+			</div>
+		</div>
+	</div>
+	<div class="top-menu js-top-menu" style="display:none;">
+		<ul class="tmenu-list top-menu-wrapper" >
+			<li>
+				<a href="javascript:;" class="tmenu-item js-top-menuitem">
+					<span class="tmenu-item-in">
+						<span class="tmenu-icon" style="background-image: url(assets/img/topmenu-icon2@2x.png);" alt="" title="重要個資運用告知聲明"></span>
+						<span>重要個資運用告知聲明</span>
+					</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+</header>
+<!-- msg window -->
+<div class="main-wrapper ">
+	<div class="msg-sec js-welcome-chat">
+			<!-- robot -->
+			<div class='msg-box msg-box-robot' data-time=''>
+				<div class='avatar'></div>
+				<div class='msg-bubble'><p>Hi~小新在這裡！😄有什麼可以協助的地方，😳別客氣告訴我喔！</p><p>很長很長的文字。很長很長的文字。很長很長的文字。很長很長的文字。很長很長的文字。很長很長的文字。很長很長的文字。</p></div>
+			</div>
+			<div class='msg-box msg-box-robot msg-cont' data-time='18:09'>
+				<div class='avatar'></div>
+				<div class='msg-bubble'>單行文字測試..</div>
+			</div>
+			<!-- 主功能(套用B2模組) 元富證券版本 -->
+			<!-- 請注意date-time='hh:mm'　需放置在最後一個　swiper-slide 上面 -->
+			<div class='msg-box msg-box-robot msg-B2' data-time=''>
+				<div class='swiper-container card-B2-swiper' id='B2_00'>
+					<div class='swiper-wrapper '>
+						<div class='swiper-slide'>
+							<div class='card card-B2'>
+								<div class='B2-kv'><img src='assets/img/mslink/msl-maincard-01@2x.png' alt='' title='熱門資訊'></div>
+								<div class='B2-title'>熱門資訊</div>
+								<div class='B2-linklist'>
+									<a href='javascript:' class='show-link' title=''>重要公告標題一</a>
+									<a href='javascript:' class='show-link' title=''>重要公告標題二</a>
+									<a href='javascript:' class='show-link' title=''>活動看板</a>
+								</div>
+							</div>
+						</div>
+						<div class='swiper-slide'>
+							<div class='card card-B2'>
+								<div class='B2-kv'><img src='assets/img/mslink/msl-maincard-02@2x.png' alt='' title='密碼問題'></div>
+								<div class='B2-title'>密碼問題</div>
+								<div class='B2-linklist'>
+									<a href='javascript:' class='show-link' title=''>密碼變更</a>
+									<a href='javascript:' class='show-link' title=''>記得密碼，我要解鎖</a>
+									<a href='javascript:' class='show-link' title=''>忘記密碼，我要補發</a>
+								</div>
+							</div>
+						</div>
+						<div class='swiper-slide'>
+							<div class='card card-B2'>
+								<div class='B2-kv'><img src='assets/img/mslink/msl-maincard-03@2x.png' alt='' title='憑證作業'></div>
+								<div class='B2-title'>憑證作業</div>
+								<div class='B2-linklist'>
+									<a href='javascript:' class='show-link' title=''>憑證申請</a>
+									<a href='javascript:' class='show-link' title=''>憑證註銷</a>
+									<a href='javascript:' class='show-link' title=''>憑證e管家</a>
+								</div>
+							</div>
+						</div>
+						<div class='swiper-slide'>
+							<div class='card card-B2'>
+								<div class='B2-kv'><img src='assets/img/mslink/msl-maincard-04@2x.png' alt='' title='新手上路'></div>
+								<div class='B2-title'>新手上路</div>
+								<div class='B2-linklist'>
+									<a href='javascript:' class='show-link' title=''>如何開戶？</a>
+									<a href='javascript:' class='show-link' title=''>我要下單</a>
+									<a href='javascript:' class='show-link' title=''>申請電子對帳單</a>
+								</div>
+							</div>
+						</div>
+						<div class='swiper-slide'>
+							<div class='card card-B2'>
+								<div class='B2-kv'><img src='assets/img/mslink/msl-maincard-05@2x.png' alt='' title='個人化服務'></div>
+								<div class='B2-title'>個人化服務</div>
+								<div class='B2-linklist'>
+									<a href='javascript:' class='show-link' title=''>雲端自選股</a>
+									<a href='javascript:' class='show-link' title=''>雲端條件單</a>
+									<a href='javascript:' class='show-link' title=''>訂閱服務</a>
+								</div>
+							</div>
+						</div>
+						<div class='swiper-slide' data-time='08:08'>
+							<div class='card card-B2'>
+								<div class='B2-kv'><img src='assets/img/mslink/msl-maincard-06@2x.png' alt='' title='帳務資訊'></div>
+								<div class='B2-title'>帳務資訊</div>
+								<div class='B2-linklist'>
+									<a href='javascript:' class='show-link' title=''>今日成交試算</a>
+									<a href='javascript:' class='show-link' title=''>對帳單</a>
+									<a href='javascript:' class='show-link' title=''>庫存查詢</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class='swiper-button-prev small'></div>
+					<div class='swiper-button-next small'></div>
+				</div>
+			</div>
+			<script>
+			var swiper_B2_00 = new Swiper('#B2_00', 
+				{
+					slidesPerView: 'auto',
+					spaceBetween: 35,
+					// Navigation arrows
+					navigation: {
+						nextEl: '.swiper-button-next',
+						prevEl: '.swiper-button-prev',
+				}
+			});
+			</script>
+			<!-- 主功能(套用B2模組) 元富證券版本 End-->
+			<!-- user -->
+			<div class='msg-box msg-box-user' data-time=''>
+				<div class='msg-bubble'>你好~</div>
+			</div>
+			<div class='msg-box msg-box-user msg-cont' data-time='16:28'>
+				<div class='msg-bubble'>
+					使用者輸入很長的文字。使用者輸入很長的文字。使用者輸入很長的文字。使用者輸入很長的文字。使用者輸入很長的文字。使用者輸入很長的文字。使用者輸入很長的文字。使用者輸入很長的文字。使用者輸入很長的文字。
+				</div>
+			</div>
+			<!-- robot -->
+			<div class='msg-box msg-box-robot' data-time='16:29'>
+				<div class='avatar'></div>
+				<div class='msg-bubble'><a href='javascript:;' class='show-link js-bottom-menu-itemOpenH'>問卷頁測試</a></div>
+			</div>
+			
+	</div>
+</div>
+<!-- input option page -->
+<div class="inputopt-section">
+	<div class="inputopt-page inputopt-J1 js-inputopt-J1" style="display:none;">
+		<div class="inputopt-J1-wrapper">
+			<div class="row btn-wrapper">
+				<a href="javascript:;" class="btn btn-full btn-normal-left js-inputopt-J1-close">還本儲蓄型保險</a>
+			</div>
+			<div class="row btn-wrapper">
+				<a href="javascript:;" class="btn btn-full btn-normal-left js-inputopt-J1-close">終身重大傷病保險</a>
+			</div>
+			<div class="row btn-wrapper">
+				<a href="javascript:;" class="btn btn-full btn-normal-left js-inputopt-J1-close">外幣利率變動型終身還本保險</a>
+			</div>
+			<div class="row btn-wrapper">
+				<a href="javascript:;" class="btn btn-full btn-normal-left js-inputopt-J1-close">4號保險</a>
+			</div>
+			<div class="row btn-wrapper">
+				<a href="javascript:;" class="btn btn-full btn-normal-left js-inputopt-J1-close">最多放二十五個中文字最適合在小手機上觀看非常感謝您</a>
+			</div>
+			<div class="row btn-wrapper">
+				<a href="javascript:;" class="btn btn-full btn-normal-left js-inputopt-J1-close">6號商品</a>
+			</div>
+			<div class="row btn-wrapper">
+				<a href="javascript:;" class="btn btn-full btn-normal-left js-inputopt-J1-close">7號商品</a>
+			</div>
+			<div class="row btn-wrapper">
+				<a href="javascript:;" class="btn btn-full btn-normal-left js-inputopt-J1-close">8號保險</a>
+			</div>
+			<div class="row btn-wrapper">
+				<a href="javascript:;" class="btn btn-full btn-normal-left js-inputopt-J1-close">9號保險</a>
+			</div>
+		</div>
+	</div>
+	<div class="inputopt-page inputopt-J3 js-inputopt-J3" style="display:none;">
+		<div class="inputopt-J3-wrapper">
+			<div class="msg-btnlist msg-btnlist-alone">
+				<a href="javascript:;" class="show-link js-inputopt-J3-close">1.還本儲蓄型保險</a>
+				<a href="javascript:;" class="show-link js-inputopt-J3-close">2.終身重大傷病保險</a>
+				<a href="javascript:;" class="show-link js-inputopt-J3-close">3.外幣利率變動型終身還本保險</a>
+				<a href="javascript:;" class="show-link js-inputopt-J3-close">4.旅遊平安型保險</a>
+				<a href="javascript:;" class="show-link js-inputopt-J3-close">5.My Way定期壽險</a>
+				<a href="javascript:;" class="show-link js-inputopt-J3-close">6.i平安傷害保險</a>
+				<a href="javascript:;" class="show-link js-inputopt-J3-close">7.天天守護傷害保險附約</a>
+				<a href="javascript:;" class="show-link js-inputopt-J3-close">8.安心意外傷害保險附約</a>
+			</div>
+		</div>
+	</div>
+	<div class="inputopt-page inputopt-J2 js-inputopt-J2" style="display:none;">
+		<div class="inputopt-J2-wrapper">
+			<div class='swiper-container card-J2-swiper' id='J2_01'>
+				<div class='swiper-wrapper '>
+					<div class='swiper-slide'>
+						<a href="javascript:;" class="btn btn-autow btn-normal js-inputopt-J2-close">1.還本儲蓄型保險</a>
+					</div>
+					<div class='swiper-slide'>
+						<a href="javascript:;" class="btn btn-autow btn-normal js-inputopt-J2-close">2.終身重大傷病保險</a>
+					</div>
+					<div class='swiper-slide'>
+						<a href="javascript:;" class="btn btn-autow btn-normal js-inputopt-J2-close">3.外幣利率變動型終身還本保險</a>
+					</div>
+					<div class='swiper-slide'>
+						<a href="javascript:;" class="btn btn-autow btn-normal js-inputopt-J2-close">4.旅遊平安型保險</a>
+					</div>
+					<div class='swiper-slide'>
+						<a href="javascript:;" class="btn btn-autow btn-normal js-inputopt-J2-close">5.My Way定期壽險</a>
+					</div>
+					<div class='swiper-slide'>
+						<a href="javascript:;" class="btn btn-autow btn-normal js-inputopt-J2-close">6.i平安傷害保險</a>
+					</div>
+					<div class='swiper-slide'>
+						<a href="javascript:;" class="btn btn-autow btn-normal js-inputopt-J2-close">7.天天守護傷害保險附約</a>
+					</div>
+					<div class='swiper-slide'>
+						<a href="javascript:;" class="btn btn-autow btn-normal js-inputopt-J2-close">8.安心意外傷害保險附約</a>
+					</div>
+				</div>
+	
+			</div>
+		</div>
+	</div>
+	</div>
+<!-- input Bar -->
+<div class="input-bar-outer">
+	<div class="input-bar">
+		<a href="javascript:;" class="btn-one-icon bottom-toggle js-bottom-menu-toggle" title="bottom選單開關"></a>
+		<div class="inputfield">
+			<input type="text" name="" class="user-input js-msger-input" placeholder="請輸入您想問小新的問題...">
+			<input type="submit" value="" class="btn-input-send js-msger-submit">
+		</div>
+	</div>
+</div>
+
+<!-- bottom-menu, bottom-up modal -->
+<footer>
+	<!-- 主選單-元富證券版本 -->
+	<div class="bottom-page js-bottom-menu" style = "display:none;">
+		<div class="bottom-close js-bottom-menu-close" title="主選單關閉"></div>
+		<div class="bottom-page-wrapper mainmenu-wrapper">
+			<div class="swiper-container mainmenu-swiper js-bottom-menu-slider">
+				<div class="swiper-wrapper ">
+					<div class="swiper-slide">
+						<a class="mainmenu-kv " href="https://www.masterlink.com.tw/" target="_blank"><img src="assets/img/dataimg/banner01@2x.jpg" alt=""
+								title="banner 01"></a>
+					</div>
+					<div class="swiper-slide">
+						<a class="mainmenu-kv " href="https://www.masterlink.com.tw/" target="_blank"><img src="assets/img/dataimg/banner02@2x.jpg" alt=""
+								title="banner 02"></a>
+					</div>
+					<div class="swiper-slide">
+						<a class="mainmenu-kv " href="https://www.masterlink.com.tw/" target="_blank"><img src="assets/img/dataimg/banner03@2x.jpg"
+								alt="" title="banner 03"></a>
+					</div>
+				</div>
+				<div class="swiper-pagination"></div>
+				<div class="swiper-button-prev small"></div>
+				<div class="swiper-button-next small"></div>
+			</div>
+			<ul class="mmenu-nav-tabs">
+				<li><a href="#idMenuPage1" class="tab js-tab active">熱門查詢</a></li>
+				<li><a href="#idMenuPage2" class="tab js-tab">熱門推薦</a></li>
+				<li><a href="#idMenuPage3" class="tab js-tab">行銷推廣</a></li>
+			</ul>
+			<div class="mmenu-tab-contents">
+					<div class="mmenu-tab-panel js-tab-panel active" data-id="idMenuPage1">
+						<ul class="mmenu-list">
+							<li><a href="javascript:;" class="mmenu-item js-bottom-menu-itemNews">
+									<span class="mmenu-icon" style="background-image: url(assets/img/mslink/msl-menuicon-11@2x.png);" alt="" title="服務據點"></span>
+									<span>服務據點</span></a>
+							</li>
+							<li><a href="javascript:;" class="mmenu-item js-bottom-menu-itemOpenH">
+									<span class="mmenu-icon" style="background-image: url(assets/img/mslink/msl-menuicon-12@2x.png);" alt="" title="客服信箱"></span>
+									<span>客服信箱</span></a>
+							</li>
+							<li><a href="javascript:;" class="mmenu-item js-bottom-menu-itemOther">
+									<span class="mmenu-icon" style="background-image: url(assets/img/mslink/msl-menuicon-13@2x.png);" alt="" title="密碼問題"></span>
+									<span>密碼問題</span></a>
+							</li>
+							<li><a href="javascript:;" class="mmenu-item js-bottom-menu-itemOther">
+									<span class="mmenu-icon" style="background-image: url(assets/img/mslink/msl-menuicon-14@2x.png);" alt="" title="憑證作業"></span>
+									<span>憑證作業</span></a>
+							</li>
+							<li><a href="javascript:;" class="mmenu-item js-bottom-menu-itemOther">
+									<span class="mmenu-icon" style="background-image: url(assets/img/mslink/msl-menuicon-15@2x.png);" alt="" title="帳務資訊"></span>
+									<span>帳務資訊</span></a>
+							</li>
+							<li><a href="javascript:;" class="mmenu-item js-bottom-menu-itemOther">
+									<span class="mmenu-icon" style="background-image: url(assets/img/mslink/msl-menuicon-16@2x.png);" alt="" title="新手上路"></span>
+									<span>新手上路</span></a>
+							</li>
+							<li><a href="javascript:;" class="mmenu-item js-bottom-menu-itemOther">
+									<span class="mmenu-icon" style="background-image: url(assets/img/mslink/msl-menuicon-17@2x.png);" alt="" title="交易工具"></span>
+									<span>交易工具</span></a>
+							</li>
+							<li><a href="javascript:;" class="mmenu-item js-bottom-menu-itemOther">
+									<span class="mmenu-icon" style="background-image: url(assets/img/mslink/msl-menuicon-18@2x.png);" alt="" title="客戶服務資訊"></span>
+									<span>客戶服務資訊</span></a>
+							</li>
+						</ul>
+						
+					</div>
+					<div class="mmenu-tab-panel js-tab-panel " data-id="idMenuPage2">
+						<ul class="mmenu-list">
+							<li><a href="javascript:;" class="mmenu-item ">
+									<span class="mmenu-icon" style="background-image: url(assets/img/mslink/msl-menuicon-21@2x.png);" alt="" title="股票活用金"></span>
+									
+									<span>股票活用金</span></a>
+							</li>
+							<li><a href="javascript:;" class="mmenu-item ">
+									<span class="mmenu-icon" style="background-image: url(assets/img/mslink/msl-menuicon-22@2x.png);" alt="" title="財富管理"></span>
+									
+									<span>財富管理</span></a>
+							</li>
+							<li><a href="javascript:;" class="mmenu-item ">
+									<span class="mmenu-icon" style="background-image: url(assets/img/mslink/msl-menuicon-23@2x.png);" alt="" title="定期定額存股"></span>
+									
+									<span>定期定額存股</span></a>
+							</li>
+							<li><a href="javascript:;" class="mmenu-item ">
+									<span class="mmenu-icon" style="background-image: url(assets/img/mslink/msl-menuicon-24@2x.png);" alt="" title="ETN專區"></span>
+									
+									<span>ETN專區</span></a>
+							</li>
+							<li><a href="javascript:;" class="mmenu-item ">
+									<span class="mmenu-icon" style="background-image: url(assets/img/mslink/msl-menuicon-25@2x.png);" alt="" title="元富權證網"></span>
+									
+									<span>元富權證網</span></a>
+							</li>
+							<li><a href="javascript:;" class="mmenu-item ">
+									<span class="mmenu-icon" style="background-image: url(assets/img/mslink/msl-menuicon-26@2x.png);" alt="" title="ETF專區"></span>
+									
+									<span>ETF專區</span></a>
+							</li>
+							<li><a href="javascript:;" class="mmenu-item ">
+									<span class="mmenu-icon" style="background-image: url(assets/img/mslink/msl-menuicon-27@2x.png);" alt="" title="雲端條件單"></span>
+									
+									<span>雲端條件單</span></a>
+							</li>
+							<li><a href="javascript:;" class="mmenu-item ">
+									<span class="mmenu-icon" style="background-image: url(assets/img/mslink/msl-menuicon-28@2x.png);" alt="" title="玩逐筆擬真"></span>
+									
+									<span>玩逐筆擬真</span></a>
+							</li>
+						</ul>
+					</div>
+					<div class="mmenu-tab-panel js-tab-panel " data-id="idMenuPage3">
+						<ul class="mmenu-list">
+							<li><a href="javascript:;" class="mmenu-item ">
+									<span class="mmenu-icon" style="background-image: url(assets/img/mslink/msl-menuicon-31@2x.png);" alt="" title="facebook"></span>
+									
+									<span>facebook</span></a>
+							</li>
+							<li><a href="javascript:;" class="mmenu-item ">
+									<span class="mmenu-icon" style="background-image: url(assets/img/mslink/msl-menuicon-32@2x.png);" alt="" title="youtube"></span>
+									
+									<span>youtube</span></a>
+							</li>
+							<li><a href="javascript:;" class="mmenu-item ">
+									<span class="mmenu-icon" style="background-image: url(assets/img/mslink/msl-menuicon-33@2x.png);" alt="" title="Line"></span>
+									
+									<span>Line</span></a>
+							</li>
+							<li><a href="javascript:;" class="mmenu-item ">
+									<span class="mmenu-icon" style="background-image: url(assets/img/mslink/msl-menuicon-34@2x.png);" alt="" title="熱門資訊"></span>
+									
+									<span>熱門資訊</span></a>
+							</li>
+							<li><a href="javascript:;" class="mmenu-item ">
+									<span class="mmenu-icon" style="background-image: url(assets/img/mslink/msl-menuicon-35@2x.png);" alt="" title="活動看板"></span>
+									
+									<span>活動看板</span></a>
+							</li>
+							<li><a href="javascript:;" class="mmenu-item ">
+									<span class="mmenu-icon" style="background-image: url(assets/img/mslink/msl-menuicon-36@2x.png);" alt=""
+										title="翻轉學堂"></span>
+							
+									<span>翻轉學堂</span></a>
+							</li>
+						</ul>
+					</div>
+			</div>
+		</div>
+	</div> 
+
+
+		<!-- 登入頁 -->
+	<div class="bottom-page js-bottom-login" style="display:none;">
+		<div class="bottom-close bottom-close-G js-bottom-login-close" title="登入頁關閉"></div>
+		<div class="login-title">此功能需身份驗證！</div>
+		<div class="bottom-page-wrapper login-wrapper">
+			<div class="row">
+				<input type="search"  class="login-input login-icon-id" size="10" maxlength="10" placeholder="請輸入身分證字號">
+			</div>
+			<div class="row">
+				<input type="password"  class="login-input password login-icon-pass" placeholder="請輸入密碼">
+			</div>
+			<div class="row login-auth-wrapper">
+				<input type="tel"  class="login-input login-icon-auth"  maxlength="4" placeholder="驗證碼">
+				<div class="login-auth-img"><img src="assets/img/dataimg/auth-token.jpg" alt="驗證碼"></div>
+				<a href="javascript:;" class="btn-one-icon " title="更換驗證碼"></a>
+			</div>
+			<div class="row btn-wrapper">
+				<a href="javascript:;" class="btn btn-confirm btn-full js-bottom-login-close">確認送出</a>
+			</div>
+			<div class="row" style="margin-top: -10px; text-align: center;">
+				<a href="javascript:;" target="_blank" class="show-link ">忘記我的密碼了</a>
+			</div>
+		</div>
+	</div>
+	<!-- G版型 -->
+	<!-- G1 -->
+	<div class="bottom-page js-bottom-G1" style="display:none;">
+		<div class="bottom-close bottom-close-G js-bottom-G1-close" title="G1登入頁關閉"></div>
+		<div class="login-title">進行身份驗證</div>
+		<div class="bottom-page-wrapper login-wrapper">
+			<div class="row">
+				<input type="search" class="login-input login-icon-id" size="10" maxlength="10" placeholder="請輸入身分證字號">
+			</div>
+			<div class="row">
+				<input type="tel" class="login-input login-icon-auth" maxlength="4" placeholder="請輸入下方圖中認證碼">
+			</div>
+			<div class="row login-auth-wrapper G-auth-wrapper">
+				<div class="login-auth-img"><img src="assets/img/dataimg/auth-token.jpg" alt="驗證碼"></div>
+				<span>看不清楚？<br>換一組認證碼 </span>
+				<a href="javascript:;" class="btn-one-icon " title="更換驗證碼"></a>
+			</div>
+			<div class="row btn-wrapper">
+				<a href="javascript:;" class="btn btn-confirm btn-full js-bottom-G1-close">確認送出</a>
+			</div>
+		</div>
+	</div>
+	<!-- G2 -->
+	<div class="bottom-page js-bottom-G2" style="display:none;">
+		<div class="bottom-close bottom-close-G js-bottom-G2-close" title="G2登入頁關閉"></div>
+		<div class="login-title">新光會員登入</div>
+		<div class="bottom-page-wrapper login-wrapper">
+			<div class="row">
+				<input type="search" class="login-input login-icon-id" size="10" maxlength="10" placeholder="請輸入會員帳號">
+			</div>
+			<div class="row">
+				<input type="password" class="login-input password login-icon-pass" placeholder="請輸入驗身密碼">
+			</div>
+			<div class="row">
+				<input type="tel" class="login-input login-icon-auth" maxlength="4" placeholder="請輸入下方圖中認證碼">
+			</div>
+			<div class="row login-auth-wrapper G-auth-wrapper">
+				<div class="login-auth-img"><img src="assets/img/dataimg/auth-token.jpg" alt="驗證碼"></div>
+				<span>看不清楚？<br>換一組認證碼 </span>
+				<a href="javascript:;" class="btn-one-icon " title="更換驗證碼"></a>
+			</div>
+			<div class="row btn-wrapper">
+				<a href="javascript:;" class="btn btn-confirm btn-full js-bottom-G2-close">確認送出</a>
+			</div>
+			<div class="row" style="margin-top: -10px; text-align: center;">
+				<a href="javascript:;" target="_blank" class="show-link ">忘記我的密碼了</a>
+			</div>
+		</div>
+	</div>
+		<!-- G3 -->
+	<div class="bottom-page  js-bottom-G3" style="display:none;">
+		<div class="bottom-close bottom-close-G js-bottom-G3-close" title="G3頁關閉"></div>
+		<div class="bottom-G-smalltitle bottom-G3G4-title">請選擇性別與年齡區間</div>
+		<div class="bottom-page-wrapper login-wrapper ">
+			<div class="row ">
+				<p class='bottom-G3G4-label'>性別</p>
+				<div class='G3-2btn-raio-wrapper'>
+					<input class='radio-button' type='radio' id='idG3GenderMale' name='idG3Gender' value='男性'>
+					<label for='idG3GenderMale'>男性</label>
+					<input class='radio-button' type='radio' id='idG3GenderFemale' name='idG3Gender' value='女性'>
+					<label for='idG3GenderFemale'>女性</label>
+				</div>
+			</div>
+			<div class="row ">
+				<p class='bottom-G3G4-label'>年齡區間</p>
+				<select class="custom-select " id='idG3Age'>
+					<option value="" selected>31-40歲</option>
+					<option value="">41-50歲</option>
+					<option value="">51-60歲</option>
+					<option value="">其他</option>
+				</select>
+			</div>
+			<div class="row btn-wrapper">
+				<a href="javascript:;" class="btn btn-confirm btn-full js-bottom-G3-close">確認送出</a>
+			</div>
+		</div>
+	</div>
+	<!-- G4 -->
+	<div class="bottom-page  js-bottom-G4" style="display:none;">
+		<div class="bottom-close bottom-close-G js-bottom-G4-close" title="G4頁關閉"></div>
+		<div class="bottom-G-smalltitle bottom-G3G4-title">請選擇預約日期與時段</div>
+		<div class="bottom-page-wrapper login-wrapper ">
+			<div class="row ">
+				<p class='bottom-G3G4-label'>預約日期</p>
+				<!-- <select class="custom-select ">
+					<option value="" selected>2019年11月7日</option>
+					<option value="">2019年11月8日</option>
+					<option value="">2019年11月9日</option>
+					<option value="">...</option>
+				</select> -->
+				<div class='G-datebox'>
+					<!-- pc/mobile 使用不同的日曆輸入法 -->
+					<input type='text' class='custom-select' name='G-date-pc' value="">
+					<input type='date' class='custom-select' name='G-date-mobile' value="2020-02-01">
+				</div>
+			</div>
+
+			<div class="row ">
+				<p class='bottom-G3G4-label'>預約時段</p>
+				<select class="custom-select" id='idG4Time'>
+					<option value="" selected>13:30-15:30</option>
+					<option value="">15:30-17:30</option>
+					<option value="">17:30-19:30</option>
+					<option value="">其他</option>
+				</select>
+			</div>
+			<div class="row btn-wrapper">
+				<a href="javascript:;" class="btn btn-confirm btn-full js-bottom-G4-close">確認送出</a>
+			</div>
+		</div>
+	</div>
+	<!-- G5 -->
+	<div class="bottom-page  js-bottom-G5" style="display:none;">
+		<div class="bottom-close bottom-close-G js-bottom-G5-close" title="G5頁關閉"></div>
+		<div class="bottom-G-smalltitle bottom-G3G4-title">需要幫你轉接真人客服嗎？</div>
+		<div class="bottom-page-wrapper login-wrapper ">
+				<div class="row btn-wrapper">
+					<a href="javascript:;" class="btn btn-normal-left btn-full js-bottom-G5-close">好，轉真人客服</a>
+				</div>
+				<div class="row btn-wrapper">
+					<a href="javascript:;" class="btn btn-normal-left btn-full js-bottom-G5-close">先不用了</a>
+				</div>
+		</div>
+	</div>
+	<!-- G6 -->
+	<div class="bottom-page bottom-page-Gform js-bottom-G6" style="display:none;">
+		<div class="bottom-close bottom-close-G js-bottom-G6-close" title="G6頁關閉"></div>
+		<div class="bottom-G-smalltitle">本期帳單交易明細</div>
+		<div class="bottom-page-wrapper G-form-wrapper scrollbar-inner js-scrollbar-inner">
+			<div class="G-formin">
+				<ul class="G6-formlist G6-formtitle">
+					<li class='G6f-label'>
+						<p class='G6f-datePay'>交易日</p>
+						<p class='G6f-dateAskMoney'>請款日</p>
+						<p class='G6f-amount'>金額(台幣)</p>
+					</li>
+				</ul>
+				<ul class="G6-formlist">
+					<li class='G6f-value'>
+						<p class='G6f-datePay'>09/20</p>
+						<p class='G6f-dateAskMoney'>09/27</p>
+						<p class='G6f-detail'>新光人壽美多富外幣利率變動型終身壽險（定期給付型）</p>
+						<p class='G6f-amount'>999,998,888</p>
+					</li>
+					<li class='G6f-value'>
+						<p class='G6f-datePay'>09/15</p>
+						<p class='G6f-dateAskMoney'>09/22</p>
+						<p class='G6f-detail'>新光三越信義A8館</p>
+						<p class='G6f-amount'>1,888</p>
+					</li>
+					<li class='G6f-value'>
+						<p class='G6f-datePay'>09/10</p>
+						<p class='G6f-dateAskMoney'>09/22</p>
+						<p class='G6f-detail'>國外交易手續費</p>
+						<p class='G6f-amount'>28</p>
+					</li>
+					<li class='G6f-value'>
+						<p class='G6f-datePay'>09/10</p>
+						<p class='G6f-dateAskMoney'>09/22</p>
+						<p class='G6f-detail'>中華電信4G月費轉帳<br>０９３９＊＊＊１２３</p>
+						<p class='G6f-amount'>1,888</p>
+					</li>
+					<li class='G6f-value'>
+						<p class='G6f-datePay'>09/10</p>
+						<p class='G6f-dateAskMoney'>09/22</p>
+						<p class='G6f-detail'>中華電信4G月費轉帳<br>０９３９＊＊＊１２３</p>
+						<p class='G6f-amount'>1,888</p>
+					</li>
+				</ul>
+				<p class="G-notes">*以上查詢結果僅供參考，實際以銀行資料為主。</p>
+			</div>
+		</div>
+	</div>
+	<!-- G7 -->
+	<div class="bottom-page bottom-page-Gform js-bottom-G7" style="display:none;">
+		<div class="bottom-close bottom-close-G js-bottom-G7-close" title="G7頁關閉"></div>
+		<div class="bottom-G-smalltitle">保單最新一期繳費狀況十三字</div>
+		<div class="bottom-page-wrapper G-form-wrapper scrollbar-inner js-scrollbar-inner">
+				<div class="G-formin">
+					<table class="G-table G7-table" >
+						<tr><td colspan="2">
+							<p class="G-label">保單編號</p> <p class="G-value ">SKL1038563118-00</p>
+						</td></tr>
+						<tr><td colspan="2">
+							<p class="G-label">保單名稱</p> <p class="G-value ">新光人壽美多富外幣利率變動型終身壽險（定期給付型）</p>
+						</td></tr>
+						<tr><td colspan="2">
+							<p class="G-label">主約險種</p> <p class="G-value">新光人壽美多富外幣利率變動型終身壽險（定期給付型）</p>
+						</td></tr>
+						<tr>
+							<td class='G-col-50'>
+								<p class="G-label">被保人</p> <p class="G-value">王新光</p>
+							</td>
+							<td class='G-col-50'>
+								<p class="G-label">應繳日期</p> <p class="G-value">108/04/21</p>
+							</td>
+						</tr>
+						<tr>
+							<td class='G-col-50'>
+								<p class="G-label">已繳金額</p> <p class="G-value">1,329,888</p>
+							</td>
+							<td class='G-col-50'>
+								<p class="G-label">幣別</p> <p class="G-value">台幣</p>
+							</td>
+						</tr>
+						<tr>
+							<td class='G-col-50'>
+								<p class="G-label">繳次</p> <p class="G-value">12/24次</p>
+							</td>
+							<td class='G-col-50'>
+								<p class="G-label">繳別</p> <p class="G-value">不確定要填什麼，試著填很多文字看看，測試測試測試</p>
+							</td>
+						</tr>
+						<tr>
+							<td class='G-col-50'>
+								<p class="G-label">繳費管道</p> <p class="G-value">信用卡扣款</p>
+							</td>
+							<td class='G-col-50'>
+								<p class="G-label">保單狀況</p> <p class="G-value">合約期間內</p>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2">
+								<p class="G-notes">*以上查詢結果僅供參考，實際以保單資料為主。</p>
+							</td>
+						</tr>
+					</table>
+				</div>
+		</div>
+	</div>
+
+
+	<!-- H版型 問卷頁 新光人壽版本-->
+	<div class="bottom-page js-bottom-H" style="display:none;">
+		<div class="bottom-close bottom-close-H js-bottom-H-close" title="登入頁關閉"></div>
+		<div class="bottom-page-title">滿意度調查問卷</div>
+		<div class="bottom-page-wrapper H-wrapper">
+			<div class='swiper-container card-H-swiper' id='H_01'>
+				<div class='swiper-wrapper '>
+					<div class='swiper-slide'>
+						<div class='H-page-wrapper'>
+							<div class='H-ques-txt ' data-ques-no='1.'><p>請問你對本次<span class='txt-hlight'>智能客服小新</span>整體滿意度為何？(星星愈多，滿意度愈高)</p></div>
+							<div class='H-star-box swiper-no-swiping'>
+								<div class='H-star-rating'>
+									<input name='idQuesStar01' id='idQues01Score5' value='5' type='radio' ></a><label for='idQues01Score5'><i class='fa fa-star'></i></label>
+									<input name='idQuesStar01' id='idQues01Score4' value='4' type='radio' checked></a><label for='idQues01Score4'><i class='fa fa-star'></i></label>
+									<input name='idQuesStar01' id='idQues01Score3' value='3' type='radio'></a><label for='idQues01Score3'><i class='fa fa-star'></i></label>
+									<input name='idQuesStar01' id='idQues01Score2' value='2' type='radio' ></a><label for='idQues01Score2'><i class='fa fa-star'></i></label>
+									<input name='idQuesStar01' id='idQues01Score1' value='1' type='radio'></a><label for='idQues01Score1'><i class='fa fa-star'></i></label>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class='swiper-slide'>
+						<div class='H-page-wrapper'>
+							<div class='H-ques-txt ' data-ques-no='2.'><p>請問你對本次<span class='txt-hlight'>真人文字客服</span>滿意度為何？(星星愈多，滿意度愈高)</p></div>
+							<div class='H-star-box swiper-no-swiping'>
+								<div class='H-star-rating'>
+									<input name='idQuesStar02' id='idQues02Score5' value='5' type='radio' ></a><label for='idQues02Score5'><i class='fa fa-star'></i></label>
+									<input name='idQuesStar02' id='idQues02Score4' value='4' type='radio' checked></a><label for='idQues02Score4'><i class='fa fa-star'></i></label>
+									<input name='idQuesStar02' id='idQues02Score3' value='3' type='radio'></a><label for='idQues02Score3'><i class='fa fa-star'></i></label>
+									<input name='idQuesStar02' id='idQues02Score2' value='2' type='radio' ></a><label for='idQues02Score2'><i class='fa fa-star'></i></label>
+									<input name='idQuesStar02' id='idQues02Score1' value='1' type='radio'></a><label for='idQues02Score1'><i class='fa fa-star'></i></label>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class='swiper-slide'>
+						<div class='H-page-wrapper' id='idPageWithSvgAnimation'>
+							<div class='H-ques-txt swiper-no-swiping' data-ques-no='3.' style='width: 100%;'> <p>其他建議請填寫於此：</p> </div>
+							<textarea id='' name='quesTxtArea' class='input-with-border swiper-no-swiping' rows='3' cols='25' placeholder='請輸入你對本次服務的建議…' maxlength='1000' type='textarea'></textarea>
+							<div class='H-svgani' id='idThankyouSvg' alt='謝謝你svg動畫'>
+								<object id="idThankyouSvgObj" type="image/svg+xml" data="assets/img/H-thankyou_static.svg" style='visibility:hidden;'></object>
+							</div>
+							<div class='btn-wrapper'>
+								<a href='javascript:;' class='btn btn-confirm btn-full js-bottom-H-close js-bottom-H-sendcfm'>確認送出</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class='swiper-pagination' data-before-txt='第' data-after-txt='題'></div>
+				<div class='swiper-button-prev card-H-prev' data-txt='&#xf053; 上一題'></div>
+				<div class='swiper-button-next card-H-next' data-txt='下一題 &#xf054;'></div>
+			</div>
+			
+		</div>
+	</div>
+</footer>
+
+</body>  
+</html>

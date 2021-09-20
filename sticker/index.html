@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>新人光壽智能客服-貼圖看大小</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+	<!-- favicon -->
+	<link rel="shortcut icon" size="16x16" href="favicon.ico">
+	<link rel="apple-touch-icon" sizes="192x192" href="favicon192.png">
+
+</head>
+<body>
+	<style>
+		ul, li{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		ul{
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: flex-start;
+			margin-bottom: 20px;			
+		}
+		li{
+			width: 150px;
+			margin-top: 10px;
+			margin-left: 20px;
+		}
+
+		.wrapper{
+			position: fixed;
+			left: 0;
+			top: 0;
+			height: 100%;
+			width: 100%;
+			background-color: #fff;
+    	background-image: url('main-bg.jpg');
+    	background-size: 100% auto;
+    	background-repeat: no-repeat;
+    	background-position: right bottom;
+			border: 1px solid #ccc;
+			overflow-y: auto;
+		}
+		p{
+			margin-bottom: 0;
+            font-size: 14px;
+		}
+		.sticker{
+			width: 170px;
+			height: 170px;
+			background-size: 170px 170px;
+			background-repeat: no-repeat;
+			background-position: left center;
+			overflow: hidden;
+		}
+		
+		.sticker-ani-6f{
+			background-size: 1020px 170px;
+			animation-duration: 1.5s; 
+			animation-iteration-count: infinite;
+			animation-timing-function: steps(6,end);
+			animation-name: stickerAniSteps6;
+		}
+		.sticker-ani-7f{
+			background-size: 1190px 170px;
+			animation-duration: 1.8s; 
+			animation-iteration-count: infinite;
+			animation-timing-function: steps(7,end);
+			animation-name: stickerAniSteps7;
+		}
+		
+		@keyframes stickerAniSteps6 { 100% { background-position: -1020px center;  } }
+		@keyframes stickerAniSteps7 { 100% { background-position: -1190px center;  } }
+	
+	</style>
+	<div class="wrapper">
+	<ul>
+		<li> 
+			<p>01.招呼</p> <div class="sticker" id="sticker01" style="background-image: url(sticker_01.png);"></div>
+		</li>
+		<li>
+			<p>02.努力找找(動圖)</p> <div class="sticker sticker-ani-6f" id="sticker02" style="background-image: url(sticker_02_ani.png);"></div>
+		</li>
+		<li>
+			<p>03.轉真人-雙人版本</p> <div class="sticker" id="sticker03" style="background-image: url(sticker_03.png);"></div>
+		</li>
+		<li >
+			<p>04.Loading</p> <div class="sticker" id="sticker04" style="background-image: url(sticker_04.png);"></div>
+		</li>
+		<li>
+			<p>05.今天好嗎(動圖)</p> <div class="sticker  sticker-ani-7f" id="sticker05" style="background-image: url(sticker_05_ani.png);"></div>
+		</li>
+		<li>
+			<p>06.猜你想問(動圖)</p> <div class="sticker sticker-ani-7f" id="sticker06" style="background-image: url(sticker_06_ani.png);"></div>
+		</li>
+		<li >
+			<p>07.好、是、報告完畢</p> <div class="sticker" id="sticker07" style="background-image: url(sticker_07.png);"></div>
+		</li>
+		<li>
+			<p>08.還有問題要問我嗎</p> <div class="sticker" id="sticker08" style="background-image: url(sticker_08.png);"></div>
+		</li>
+		<li>
+			<p>09.祝福(動圖)</p> <div class="sticker sticker-ani-7f" id="sticker09" style="background-image: url(sticker_09_ani.png);"></div>
+		</li>
+		<li>
+			<p>10.抱歉、不好意思</p> <div class="sticker" id="sticker10" style="background-image: url(sticker_10.png);"></div>
+		</li>
+	</ul>
+	</div>
+</body>  
+</html>

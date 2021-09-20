@@ -1,0 +1,143 @@
+/* file: _variable */
+
+$font_40px: 2.5rem //40px 
+$font_30px: 1.875rem //30px 
+$font_26px: 1.625rem //26px 
+$font_24px: 1.5rem //24px 
+$font_20px: 1.25rem //20px 
+$font_18px: 1.125rem //18px 
+$font_17px: 1.0625rem //17px
+$font_16px: 1rem   //16px
+$font_15px: 0.9375rem //15px 
+$font_14px: 0.875rem   //14px
+$font_13px: 0.8125rem //13px
+$font_12px: 0.75em //12px
+
+$topbar_h: 50px
+$inputbar_h: 60px
+$avatar_w: 45px
+$avatar_and_triangle_w: 70px
+$card_padding_left: 70px
+$swiper_B1_w: calc(400px + 120px)
+$card_B2_w: 200px
+// $card_F_w: 220px
+// $card_F_h: 138px
+$card_F_w: 190px
+$card_F_h: 119px
+$card_D4_w: 400px
+$card_C2_w: 400px
+$card_Fform_w: 100%
+$img_full_w: 400px
+$inline_icon_size: 20px
+$login_icon_size: 36px
+$tmenu_icon_size: 40px
+$mmenu_icon_size: 50px
+
+$mainmenu_kv_w: 600px
+$mainmenu_w: 600px
+
+$loginpage_w: 768px
+$topmenu_w: 768px
+$mainwrapper_w: 768px
+$tmenu_item_h: 50px
+
+$robot_msg_datetime_padding: 70px
+$G6f-margin: -5px
+$btn_h: 46px
+$btn_close_size: 50px
+$msg_bubble_h: 50px
+$input_h: 40px
+$btn_normal_h: 40px
+$login_input_h: 50px
+$popup_E2_h: 60vh
+$bottom_mainmenu_wrapper_offset: -20px
+$bottom_mainmenu_h: calc(80vh - 50px)
+$bottom_G_title_w: calc(100% - 50px)
+$bottom_G_h: 80vh
+$bottom_G_title_h: 70px
+$bottom_G_wrapper_h: calc(80vh - 70px)
+$c_white: #fff
+$c_black: #000
+$c_white_a90: rgba(255, 255, 255, 0.9)
+$c_white_a70: rgba(255, 255, 255, 0.7)
+$c_white_a50: rgba(255, 255, 255, 0.5)
+$c_white_a25: rgba(255, 255, 255, 0.25)
+$c_white_a10: rgba(255, 255, 255, 0.1)
+$c_black_a10: rgba(0,0,0, 0.1)
+$c_black_a25: rgba(0,0,0, 0.25)
+$c_black_a30: rgba(0, 0, 0, 0.3)
+$c_black_a50: rgba(0, 0, 0, 0.5)
+$c_black_a70: rgba(0, 0, 0, 0.7)
+
+$c_menu_bg: #EAE9E9
+$c_menu_shadow: 0 5px 5px rgba(0, 0, 0, 0.2)
+$c_btn_shadow: 0 0 5px rgba(0, 0, 0, 0.4)
+// $c_bubble_shadow: 0 0 8px rgba(255, 255, 255, 1)
+$c_bubble_shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.15)
+
+$c_creditcard_shadow: 0 0 5px rgba(0, 0, 0, 0.5)
+$c_J3_shadow: 0 0 5px rgba(0, 0, 0, 0.2)
+$c_darkgray: #919191
+$c_swiper_bullet_shadow: 0 0 5px rgba(0, 0, 0, 0.4)
+$c_swiper_bullet_size: 10px
+
+$b_radius_menu: 10px
+$b_radius_menuitem: 5px
+$b_radius_input: 5px
+$b_radius_btn: 5px
+$b_radius_msgbubble: 10px
+$b_radius_card: 5px
+
+/* btn */
+$c_swiper_btn_bg: #EAE9E9
+$c_swiper_btn_fg: #919191
+
+/* border */
+$c_input_focus_border: #E1251B
+$c_card_border: #D8D8D8
+$c_Gtitle_border: #ACACAC
+/* txt */
+$c_txt_red: #E1251B
+$c_txt_turq: #25AAB4
+$c_txt_color: #414141
+$c_card_link: #E1251B
+$c_card_title: #414141
+$c_card_txt: #666
+$c_txt_showlink: #E1251B
+$c_txt_lightgray: #919191
+/* bg */
+$c_bg_red: #E1251B
+// $c_bg_msg_robot: #EAE9E9
+$c_bg_msg_robot: #FFF
+// $c_bg_msg_user: #FCE2D7
+$c_bg_msg_user: #FF6D68
+$c_star_bg_gray: #ACACAC
+$c_star_bg_red: #E1251B
+$c_scrollbar_gray: #919191
+@mixin appearance($appearance)
+    -moz-appearance: $appearance
+    -o-appearance: $appearance
+    -webkit-appearance: $appearance
+    appearance: $appearance
+@mixin transition($transition...)
+    -moz-transition: $transition
+    -o-transition: $transition
+    -webkit-transition: $transition
+    transition: $transition    
+@mixin transform($transform...)
+    -moz-transform: $transform
+    -o-transform: $transform
+    -ms-transform: $transform
+    -webkit-transform: $transform
+    transform: $transform 
+
+@mixin transform-origin($transform-origin)
+    -moz-transform-origin: $transform-origin
+    -o-transform-origin: $transform-origin
+    -webkit-transform-origin: $transform-origin
+    transform-origin: $transform-origin
+@mixin gradient($direction, $list) 
+    background: -webkit-linear-gradient($direction, $list)
+    background: -moz-linear-gradient($direction, $list)
+    background: -o-linear-gradient($direction, $list)
+    background: linear-gradient($direction, $list)

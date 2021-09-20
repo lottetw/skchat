@@ -1,0 +1,46 @@
+@import _variable
+/* file: _queries.sass */
+/* ============================================================ */
+/*                    msg bubble width              			*/
+/* ============================================================ */
+
+
+/* ============================================================ */
+/*                    main menu                        			*/
+/* ============================================================ */
+@media only screen and (max-width: 768px)
+    .swiper-container.card-B2-swiper, .swiper-container.card-B3-swiper
+        .swiper-button-prev
+            left: 10px
+@media only screen and (min-width: 601px)
+    .mmenu-nav-tabs, .mmenu-tab-contents
+        padding-left: 0
+        padding-right: 0
+    .mmenu-tab-panel.active
+        height: calc(80vh -340px)
+    .mmenu-list
+        li
+            width: 49.5%
+            a.mmenu-item
+                max-width: 100%
+                span:nth-child(2)
+                    width: auto
+//especially for sklife menu
+@media only screen and (max-height: 620px)
+    .swiper-container.mainmenu-swiper
+        max-width: 400px
+        height: auto
+    // .mmenu-tab-panel.active
+    //     height: calc(80vh - 280px) //remove for sklife menu
+
+@media only screen and (max-width: 350px)
+    .mmenu-nav-tabs, .mmenu-tab-contents
+        padding-left: 5px
+        padding-right: 5px
+    .mmenu-list
+        li
+            a.mmenu-item
+                span.mmenu-icon
+                    margin-left: 2px
+                    margin-right: 5px
+
